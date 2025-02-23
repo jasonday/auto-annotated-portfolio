@@ -75,7 +75,7 @@ export function seoGenerateOgImage(page, site) {
     const absoluteUrlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
 
     // ogImage should use an absolute URL. Get the Netlify domain URL from the Netlify environment variable process.env.URL
-    const domainUrl = site.env?.URL;
+    const domainUrl = process.env.URL;
 
     if (ogImage) {
         if (domainUrl && !absoluteUrlRegex.test(ogImage)) {
